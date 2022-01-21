@@ -9,11 +9,12 @@ const linkImg = document.getElementById("linkImg")
 
 // Obtem a localização geográfica do navegador
 function getLocation (){
-  navigator.geolocation.getCurrentPosition(function(position) {
+  
+  const locationOn = (position) =>{
     getImg(position.coords.latitude, position.coords.longitude)
-  })
+  }
 
-  function locationError() {
+  const locationOff = () => {
       const latitude = -25.4284
       const longitude = -49.2733
       getImg(latitude, longitude)
@@ -21,11 +22,10 @@ function getLocation (){
 
   if(!navigator.geolocation){
       console.log("Serviço de localização não suportado em seu navegador")
-
+      
     }else{
-        navigator.geolocation.getCurrentPosition(locationError)
-      }
-  
+      navigator.geolocation.getCurrentPosition(locationOn, locationOff)
+    }
 }
 getLocation()
  
@@ -39,7 +39,7 @@ function constructImageURL (photoObj) {
 
 const getImg = (latitude, longitude) => {
   // chave api do Flickr
-  let keyApiUrl = `https://shrouded-mountain-15003.herokuapp.com/https://www.flickr.com/services/rest/?api_key=4a014f54d64de29f0a87094ceae35ddd&format=json&nojsoncallback=1&method=flickr.photos.search&safe_search=1&per_page=5&lat=${latitude}&lon=${longitude}&text=cachorros`
+  let keyApiUrl = `https://shrouded-mountain-15003.herokuapp.com/https://www.flickr.com/services/rest/?api_key=4a014f54d64de29f0a87094ceae35ddd&format=json&nojsoncallback=1&method=flickr.photos.search&safe_search=1&per_page=5&lat=${latitude}&lon=${longitude}&text=rio`
   fetch(keyApiUrl)
     .then(res => res.json())
     .then(data => {
