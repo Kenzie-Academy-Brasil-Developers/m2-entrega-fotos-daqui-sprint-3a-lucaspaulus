@@ -4,11 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
+    <link rel="stylesheet" href="src/css/style.css">
     <title>Fotos Daqui</title>
 </head>
 <body>
+    <aside>
+        <header>
+            <h1>Social Photo Geo</h1>
+        </header>
+        <section>
+            <h2>Welcome</h2>
+            <div class="underline"></div>
+            <form action="">
+                <div class="input-field">
+                    <input type="text" name="username" id="username" placeholder="Coloque seu nome">
+                </div>
+                <div class="input-field">
+                    <input type="password" name="password" id="password" placeholder="Coloque sua senha">
+                </div>
+                <input type="submit" value="Login">
+            </form>
+            <span>Design by Lucas p.</span>
+        </section>
+        
+    </aside>
+    <main>
+        <h2>Fotos Daqui</h2>
+        <div class="img">
+            <img class="img__logoApp" src="src/img/plane-background.png" alt="logo de fundo do aplicativo de fotos">
+            <div class="img__photo img__attr">
+                <div class="img__photoOverlay img__attr"></div>
+            </div>
+            
+        </div>
+        <div class="link">
+            <a id="linkImg" href="#" target="_blanck" title="">Ver imagem no flikr</a>
+        </div>
+      
+        <div class="btn">
+            <button class="btn__back">Anterior</button>
+            <button class="btn__forward">Próxima</button>
+          </div>
+    </main>
+    
 
-    <h1>Fotos Daqui</h1>
+    <script src="src/js/script.js"></script>
     
 </body>
 </html>
